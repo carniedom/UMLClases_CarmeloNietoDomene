@@ -22,4 +22,7 @@ class Person{
 
 class AAUOC{
 }
+
+Event <|-- Conference
+Event <|-- BoardMeeting
 @enduml
