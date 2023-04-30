@@ -29,18 +29,22 @@ class Person{
 }
 
 class AAUOC{
-    
+    newLocation(l : Location) : void
+    newEvent(e : Event) : void
+    newPerson(p : Person) : void
+    informEvent(e : Event) : void
+    register(m : Member,e : Event) : void
 }
 
 AAUOC o-- Event
 AAUOC o-- Person
 AAUOC o-- Location
-Event -- Location
-Event -- Member
+Event -- Location : isLocated in
+Event -- Member : attendsTo
 Event <|-- Conference
 Event <|-- BoardMeeting
-Conference -- Person
-BoardMeeting -- BoardMember
+Conference -- Person : attendsTo
+BoardMeeting -- BoardMember : attendsTo
 Person <|-- Member
 Member <|-- BoardMember
 
