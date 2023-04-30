@@ -1,5 +1,7 @@
 @startuml
 class Member{
+    description : String
+    address : String
 }
 
 class BoardMember{
@@ -34,6 +36,4 @@ Conference -- Person
 BoardMeeting -- BoardMember
 Person <|-- Member
 Member <|-- BoardMember
-
-
 @enduml
