@@ -36,15 +36,15 @@ class AAUOC{
     register(m : Member,e : Event) : void
 }
 
-AAUOC o-- Event
-AAUOC o-- Person
-AAUOC o-- Location
-Event -- Location : isLocated in
-Event -- Member : attendsTo
+AAUOC o-- "0..*" Event
+AAUOC o-- "0..*" Person
+AAUOC o-- "0..*" Location
+Event "0..*" -- "   1" Location : isLocated in
+Event "0..*" -- "0..*" Member : attendsTo
 Event <|-- Conference
 Event <|-- BoardMeeting
-Conference -- Person : attendsTo
-BoardMeeting -- BoardMember : attendsTo
+Conference "0..*" -- "0..*" Person : attendsTo
+BoardMeeting "0..*" -- "0..*" BoardMember : attendsTo
 Person <|-- Member
 Member <|-- BoardMember
 
