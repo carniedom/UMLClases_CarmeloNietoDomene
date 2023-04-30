@@ -25,4 +25,7 @@ class AAUOC{
 
 Event <|-- Conference
 Event <|-- BoardMeeting
+
+Person <|-- Member
+Member <|-- BoardMember
 @enduml
